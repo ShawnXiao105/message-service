@@ -28,6 +28,7 @@ public class MessageController {
     }
     
     @PostMapping("/messages")
+    @ResponseBody
     public Message saveMessage(@RequestBody Message message) {
         return repository.save(new Message(message.fromAddress, message.toAddress, message.title, message.content));
     }    
